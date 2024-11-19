@@ -2,7 +2,7 @@
 
 body {
   font-family: "DM Sans", sans-serif;
-  width: 60vw;
+  width: 70vw;
   margin: 50px auto;
 }
 
@@ -18,6 +18,7 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin: 10px 0;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -41,14 +42,50 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+  box-shadow: none;
+}
+
+.parent > div {
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02);
+  }
 }
 
 .div1 {
+  display: flex;
+  flex-direction: column;
   grid-area: 1 / 1 / 4 / 2;
+  background: var(--yellow-100);
+  color: var(--black);
 }
+.div1 p {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+.div1 p i {
+  color: var(--purple-500);
+}
+
+.create-post {
+  margin-left: 50px;
+  display: flex;
+  width: 65%;
+}
+
 .div2 {
+  background: var(--yellow-500);
   grid-area: 4 / 1 / 7 / 2;
 }
 .div3 {
@@ -59,8 +96,7 @@ p {
   grid-area: 1 / 2 / 3 / 4;
   background-color: var(--purple-500);
   color: var(--white);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+
   padding: 50px 0;
 }
 
@@ -76,15 +112,64 @@ p {
 }
 
 .div4 {
+  background: var(--white);
   grid-area: 3 / 2 / 5 / 3;
 }
 .div5 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--yellow-500);
   grid-area: 3 / 3 / 5 / 4;
+  align-items: center;
+  overflow: hidden;
 }
+
+.div5 p {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 30px;
+}
+
+.schedule-post {
+  width: 80%;
+  align-self: center;
+  position: absolute;
+  bottom: -65px;
+}
+
 .div6 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: var(--purple-100);
   grid-area: 1 / 4 / 5 / 5;
+  overflow: hidden;
+  display: inline-block; /* Keeps the image in flow */
 }
+
+.div6 p {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 30px;
+}
+
+.schedule-social-media {
+  margin-left: 50px;
+  height: 300px;
+  object-fit: cover;
+  display: block; /* Ensures consistent block-like behavior */
+}
+
+.div6 .optimize {
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .div7 {
+  background: var(--purple-500);
   grid-area: 5 / 3 / 7 / 5;
 }
 .div8 {
